@@ -1,0 +1,23 @@
+<h1>Users</h1>
+<table>
+	<tr>
+		<td>Name</td>
+		<td>Created At</td>
+		<td>Updated At</td>
+	</tr>
+	<% @users.each do |user|%>
+	<tr>
+		<td><%= user.name%></td>
+		<td><%= user.created_at%></td>
+		<td><%= user.updated_at%></td>
+	</tr>
+	<%end%>
+</table>
+
+<h2>Create User</h2>
+<form action='/users/' method='post'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type='text' name='name' />
+  <input type='submit' value='Create' />
+</form>
+<p>Find me in app/views/users/index.html.erb</p>
