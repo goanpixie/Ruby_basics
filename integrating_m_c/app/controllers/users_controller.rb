@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end
 
   def create
-  	# @user = User.create(name: params[:name])
-  	# redirect_to '/users/index'
+	@user = User.create(name:(0...8).map { (65 + rand(26)).chr }.join)
+  	redirect_to '/users/index'
   end
 
     def new
