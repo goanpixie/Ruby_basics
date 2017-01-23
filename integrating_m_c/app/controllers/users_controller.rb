@@ -5,11 +5,12 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.create(name: params[:name])
-  	redirect_to '/users/index'
+  	# @user = User.create(name: params[:name])
+  	# redirect_to '/users/index'
   end
 
     def new
   	@user = User.create(name: params[:name])
+  	redirect_to '/users/index'
     end
 end
