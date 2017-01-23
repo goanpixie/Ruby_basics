@@ -15,13 +15,21 @@ class UsersController < ApplicationController
     end
 
     def show
-    	@users =User.first
-    	render json: @users
+
+    	@users =User.last
+    	render json: @users.id
     end
 
     def edit
-    	@users = User.first
-    	render json: @users
+    	@users = User.last(params[:id]) 
+    	# @users = User.first(params[:name]) 	
     end
+
+
+    def total
+    	@users = User.last(params[:id]) 	
+    end
+
+
 
 end

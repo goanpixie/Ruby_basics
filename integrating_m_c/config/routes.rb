@@ -15,6 +15,12 @@ Rails.application.routes.draw do
 
  post "users" => "users#edit"
 
+ get "users/:id/edit" => "users#index"
+
+ put "media/:id/update" => "media#update"
+
+ post "users"  => "users#total"
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
