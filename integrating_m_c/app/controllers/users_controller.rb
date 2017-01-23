@@ -13,4 +13,15 @@ class UsersController < ApplicationController
   	@user = User.create(name: params[:name])
   	redirect_to '/users/index'
     end
+
+    def show
+    	@users =User.first
+    	render json: @users
+    end
+
+    def edit
+    	@users = User.first
+    	render json: @users
+    end
+
 end

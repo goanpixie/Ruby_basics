@@ -7,8 +7,13 @@ Rails.application.routes.draw do
 
  post "users" => "users#new"
 
+ post "users" => "users#show"
+
  resources :users
 
+ resources :users, path: 'users/1/'
+
+ post "users" => "users#edit"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
