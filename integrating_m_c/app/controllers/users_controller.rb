@@ -8,4 +8,8 @@ class UsersController < ApplicationController
   	@user = User.create(name: params[:name])
   	redirect_to '/users/index'
   end
+
+    def new
+  	@user = User.create(name: params[:name])
+    end
 end
