@@ -1,0 +1,3 @@
+APP_ID= '233531383774494'
+APP_SECRET= 'fb5070ce8189842b56550caa3d5fa8f5'
+SITE_URL = 'http://localhost:3000' 
