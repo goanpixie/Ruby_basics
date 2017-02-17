@@ -1,0 +1,35 @@
+<h1>All Products</h1>
+
+<table>
+<tr>
+	<th>name</th>
+	<th>description</th>
+	<th>pricing</th>
+	<th>Category</th>
+
+</tr>
+<% @products.each do |a|%>
+<tr>
+    
+	<td> <%= a.name %></td>
+	<td><%= a.description %></td>
+	<td> <%= a.pricing %></td>
+	<td> <%= a.category.name %></td>
+	<td><a href="/products/<%= a.id%>"><strong> Show </strong></a></td>
+	<td><a href="/products/<%= a.id%>/edit"><strong> Edit </strong></a></td>
+	<td>
+		
+<form action = "/products/<%= a.id%>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+	<input type="submit" value="delete">
+</form>
+
+	</td>
+	
+</tr>
+<% end %>
+
+</table>
+
+<a href="/products/new">New Product</a>

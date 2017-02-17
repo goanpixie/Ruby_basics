@@ -1,0 +1,11 @@
+<h1>Editing <%= @animes.name%></h1>
+
+<form action="/animes/<%= @animes.id %>" method="post">
+	<input type="hidden" name="_method" value="patch">
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  
+	<input type="text" name="name" value="<%= @animes.name%>">
+	<input type="submit" value="Update">
+
+
+</form>

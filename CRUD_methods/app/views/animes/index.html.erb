@@ -1,0 +1,6 @@
+<h1>All animals</h1>
+<a href="/animes/new">New Animes</a>
+
+<% @animes.each do |a| %>
+<p> <a href="/animes/<%= a.id %>"><%= a.name %></a>  </p>
+<% end %>

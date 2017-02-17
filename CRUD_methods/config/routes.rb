@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
+
+get 'animes' => 'animes#index'
+
+get 'animes/new' => 'animes#new'
+
+post '/animes' =>'animes#create'
+
+get 'animes/:id' => 'animes#show'
+
+get '/animes/:id/edit'=>'animes#edit'
+
+patch 'animes/:id' =>'animes#update'
+
+delete 'animes/:id'=>'animes#destroy'
+
+# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
