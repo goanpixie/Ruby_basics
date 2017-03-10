@@ -9,11 +9,17 @@ Rails.application.routes.draw do
 
   post '/register'=> 'users#create'
 
-  get '/events/index'=>'events#show'
+  get '/events/show'=>'events#show'
+
+  get '/events_index'=>'events#index'
 
   post '/users/login'=>'users#login'
 
  delete '/logout'=>'users#logout'
+
+ post 'add_information' =>'events#create'
+
+ delete '/events/:id'=>'events#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

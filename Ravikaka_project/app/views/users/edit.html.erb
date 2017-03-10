@@ -1,0 +1,25 @@
+<p><%= flash[:errors] %></p>
+
+<form action="/users/<%= @user.id %>" method="post">
+
+<fieldset>
+<legend>Edit</legend>
+	<input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
+	<p>
+	<label for="name">First Name:</label>
+	<input id="name" type="string" name="name" placeholder="<%= @user.name %>">
+	</p>
+
+	<p>
+	<label for="email"> Email:</label>
+	<input id="email" type="email" name="email" placeholder="<%= @user.email%>">
+	</p>
+
+	<p>
+	<label for="password"> Password:</label>
+	<input id="password" type="password" name="password" placeholder="<%= @user.password%>">
+	</p>
+	<input type="submit" value="Update">
+	</fieldset>
+</form>

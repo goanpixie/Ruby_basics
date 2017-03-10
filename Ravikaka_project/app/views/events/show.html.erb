@@ -1,1 +1,18 @@
+<a href="/events_index">Dashboard</a>
+
 <h1>Welcome <%= @user.name %></h1>
+
+<a href="/users/<%= @user.id %>/edit">Edit User</a>
+<p><%= flash[:errors] %></p>
+<form action='/add_information' method='post'>
+<fieldset>
+    <legend>About Us:</legend> 
+    	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  		<p>
+    		<label for="information">Add Information:</label><br>
+    		<textarea rows="10" cols="175"  id="information" type="text" name="information" placeholder="About Us">
+    		</textarea>
+  		</p> 
+  		<input type="submit" value="Submit">
+  </fieldset>
+ </form>
