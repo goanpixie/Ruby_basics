@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	  			if @user.valid?
 		  			@user.save
 		  			session[:user_id] = @user.id
-		  			redirect_to '/events/show'
+		  			redirect_to '/events_show'
 		  		else
 	  		 	flash[:errors] = @user.errors.full_messages
       			redirect_to :back
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       @user.update(name:params[:name], email:params[:email],password:params[:password])
         if @user.valid?
           flash[:success] = "User successfully updated"
-          redirect_to '/events/show'
+          redirect_to '/events_show'
         else
           flash[:errors] = @user.errors.full_messages
             redirect_to :back
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
         if user && user.authenticate(params[:password])
         
           session[:user_id] = user.id
-          redirect_to '/events/show'
+          redirect_to '/events_show'
         else
           flash[:errors] = ["Invalid combination"]
           redirect_to :back

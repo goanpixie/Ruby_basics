@@ -1,13 +1,15 @@
 class EventsController < ApplicationController
 
 	def index
-  		@user = User.find(session[:user_id])
   		# @event=Event.find(params[:id])
   		@events=Event.all
+  		@user=User.find(session[:user_id])
 	end
 
 	def show
 		@user = User.find(session[:user_id])
+		@picture = Picture.new(picture_params)
+		# @picture = Picture.create(title:params[:title],description:params[:description],image:params[:image],user:User.find(session[:user_id]))
 	end
 
 	def create    
@@ -43,7 +45,10 @@ class EventsController < ApplicationController
     def destroy
       event = Event.find(params[:id])
       event.destroy
-      session[:user_id] = nil
       redirect_to '/events_index' 
+    end
+
+    def picture_params
+      params.require(:picture).permit(:title, :description, :image)
     end
 end 

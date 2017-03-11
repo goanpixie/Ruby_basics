@@ -41,8 +41,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
+# ===============For password encryption===============  
   gem 'bcrypt', '~> 3.1.7'
+# ===================================================    
 group :test, :development do
   gem 'rspec-rails'
   gem 'database_cleaner'
@@ -50,9 +51,11 @@ end
 group :test do
   gem 'capybara'
 end
-
+# ==============For additional information availability in each method================
 group :development do
  gem "rails-footnotes"
 end
+# ==============For picture uploading================
+gem 'paperclip'
 end
 

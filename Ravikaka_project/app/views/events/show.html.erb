@@ -4,6 +4,17 @@
 
 <a href="/users/<%= @user.id %>/edit">Edit User</a>
 <p><%= flash[:errors] %></p>
+
+<%= form_for(@picture, :method => :get, :html => {:multipart => true}, :url => { :controller => "events", :action => "upload"}) do |f| %>
+  <%= f.label :title%>
+  <%= f.text_field :title%>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+ <%= f.file_field :image %>
+ <%= f.submit :submit %>
+<% end %>
+
+
 <form action='/add_information' method='post'>
 <fieldset>
     <legend>About Us:</legend> 
