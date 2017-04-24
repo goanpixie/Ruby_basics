@@ -2,13 +2,15 @@ class EventsController < ApplicationController
 
 	def index
   		# @event=Event.find(params[:id])
-  		@events=Event.all
-  		@user=User.find(session[:user_id])
+  		@events = Event.all
+  		@user = User.find(session[:user_id])
+      @products = Product.all
+      
 	end
 
 	def show
 		@user = User.find(session[:user_id])
-		@picture = Picture.new(picture_params)
+		
 		# @picture = Picture.create(title:params[:title],description:params[:description],image:params[:image],user:User.find(session[:user_id]))
 	end
 
@@ -48,7 +50,5 @@ class EventsController < ApplicationController
       redirect_to '/events_index' 
     end
 
-    def picture_params
-      params.require(:picture).permit(:title, :description, :image)
-    end
+    
 end 

@@ -65,6 +65,10 @@ GEM
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     diff-lcs (1.3)
+    dragonfly (1.1.1)
+      addressable (~> 2.3)
+      multi_json (~> 1.0)
+      rack (>= 1.3)
     erubis (2.7.0)
     execjs (2.7.0)
     globalid (0.3.7)
@@ -193,6 +197,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
+  dragonfly
   jbuilder (~> 2.0)
   jquery-rails
   paperclip

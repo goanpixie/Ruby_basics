@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+<p class="resize">
+  
+  
+  <%= image_tag @product.image.url if @product.image_stored? %>
+</p>
+
+<style>
+	.resize{
+		width: 50%;
+    	height: 50%;
+	}
+</style>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+
+

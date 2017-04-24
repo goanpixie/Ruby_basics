@@ -57,5 +57,8 @@ group :development do
 end
 # ==============For picture uploading================
 gem 'paperclip'
+
+gem 'dragonfly'
+
 end
 
