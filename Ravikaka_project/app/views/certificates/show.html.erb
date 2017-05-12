@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p class="resize">
+ <%= image_tag @certificate.image.url %>
+</p>
+
+<style>
+	.resize{
+		width: 50%;
+    	height: auto;
+	}
+</style>
+<%= link_to 'Edit', edit_certificate_path(@certificate) %> |
+<%= link_to 'Back', certificates_path %>

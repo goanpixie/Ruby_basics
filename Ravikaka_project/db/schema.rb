@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418001340) do
+ActiveRecord::Schema.define(version: 20170427002921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "certificates", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image_uid"
+  end
 
   create_table "events", force: :cascade do |t|
     t.text     "information"
@@ -24,6 +30,12 @@ ActiveRecord::Schema.define(version: 20170418001340) do
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
+
+  create_table "newsletters", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "news_uid"
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.string   "title"
@@ -41,9 +53,10 @@ ActiveRecord::Schema.define(version: 20170418001340) do
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "image_uid"
+    t.string   "newsletter_uid"
   end
 
   create_table "users", force: :cascade do |t|

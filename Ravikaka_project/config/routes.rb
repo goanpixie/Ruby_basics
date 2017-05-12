@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :certificates
+
+  resources :newsletters
+
   resources :products
 
   # root 'events#index'
